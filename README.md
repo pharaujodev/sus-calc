@@ -31,5 +31,5 @@ Acesse em: http://localhost:5173
 
 ## Discente
 
-Nome: [SEU NOME AQUI]  
-Matrícula: [SUA MATRÍCULA AQUI]
+Nome: Pedro Henrique de Araujo Pereira
+Matrícula: 2025.1.0120.0114-3
