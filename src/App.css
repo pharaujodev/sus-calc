@@ -227,3 +227,48 @@ body {
   .app { padding: 1rem; }
   .sus-form-section, .score-history { padding: 1.25rem; }
 }
+
+
+.score-card__system {
+  font-size: 0.95rem;
+  opacity: 0.9;
+  margin-bottom: 0.4rem;
+}
+
+.score-card__score {
+  display: block;
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.score-card__label {
+  display: inline-block;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.history-badge {
+  display: inline-block;
+  color: #fff;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.history-table td:nth-child(2) {
+  color: #5b2d8e;
+  font-weight: 600;
+}
+
+@media (max-width: 700px) {
+  .history-table {
+    display: block;
+    overflow-x: auto;
+  }
+
+  .score-card__score {
+    font-size: 2.4rem;
+  }
+}
