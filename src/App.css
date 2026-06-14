@@ -1,0 +1,229 @@
+/* ─── Reset e base ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: #f8f4fc;
+  color: #1c2833;
+  line-height: 1.6;
+}
+
+/* ─── Layout ─────────────────────────────────────────────────*/
+.app {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.app-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.app-header h1 {
+  font-size: 2.4rem;
+  color: #5b2d8e;
+  letter-spacing: -0.02em;
+}
+
+.app-subtitle {
+  color: #717d7e;
+  font-size: 0.95rem;
+  margin-top: 0.25rem;
+}
+
+/* ─── Formulário ─────────────────────────────────────────────*/
+.sus-form-section {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(91,45,142,0.08);
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #5b2d8e;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1.5px solid #d7bde2;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #5b2d8e;
+}
+
+/* ─── Questões ───────────────────────────────────────────────*/
+.sus-questions {
+  list-style: none;
+  counter-reset: question;
+}
+
+.sus-question {
+  counter-increment: question;
+  padding: 1.2rem 0;
+  border-bottom: 1px solid #f2f3f4;
+}
+
+.sus-question:last-child { border-bottom: none; }
+
+.question-text {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.75rem;
+  color: #1c2833;
+}
+
+.question-text::before {
+  content: counter(question) ". ";
+  font-weight: 700;
+  color: #5b2d8e;
+}
+
+.likert-scale {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 0.25rem;
+}
+
+.likert-option {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.15s;
+}
+
+.likert-option:hover { background: #f5eef8; }
+
+.likert-option input[type="radio"] { margin-bottom: 0.25rem; accent-color: #5b2d8e; }
+
+.likert-option span { font-size: 0.8rem; color: #717d7e; }
+
+.likert-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: #aaa;
+  padding: 0 0.2rem;
+}
+
+/* ─── Botões ─────────────────────────────────────────────────*/
+.btn-submit, .btn-clear {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+
+.btn-submit {
+  background: #5b2d8e;
+  color: #fff;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.btn-submit:hover  { opacity: 0.9; }
+.btn-submit:active { transform: scale(0.98); }
+
+.btn-clear {
+  background: #f2f3f4;
+  color: #5b2d8e;
+  margin-top: 1.5rem;
+  border: 1.5px solid #d7bde2;
+}
+
+.btn-clear:hover { background: #f5eef8; }
+
+/* ─── Erro de validação ──────────────────────────────────────*/
+.error-message {
+  color: #c0392b;
+  font-size: 0.9rem;
+  margin-top: 0.75rem;
+  padding: 0.6rem 1rem;
+  background: #fdedec;
+  border-left: 4px solid #c0392b;
+  border-radius: 4px;
+}
+
+/* ─── ScoreCard ──────────────────────────────────────────────*/
+.score-card {
+  margin-top: 1.5rem;
+  padding: 1.5rem 2rem;
+  border-radius: 10px;
+  color: #fff;
+  text-align: center;
+}
+
+/* ─── Histórico ──────────────────────────────────────────────*/
+.score-history {
+  background: #fff;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 2px 12px rgba(91,45,142,0.08);
+}
+
+.score-history h2 {
+  font-size: 1.25rem;
+  color: #5b2d8e;
+  margin-bottom: 1rem;
+}
+
+.score-history.empty { color: #aaa; text-align: center; }
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1rem;
+}
+
+.history-table th {
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  background: #5b2d8e;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.history-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid #f2f3f4;
+  font-size: 0.95rem;
+}
+
+.history-table tr:last-child td { border-bottom: none; }
+
+.history-average {
+  padding: 0.75rem 1rem;
+  background: #f5eef8;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* ─── Responsivo ─────────────────────────────────────────────*/
+@media (max-width: 600px) {
+  .likert-scale { gap: 0.25rem; }
+  .app { padding: 1rem; }
+  .sus-form-section, .score-history { padding: 1.25rem; }
+}
