@@ -3,8 +3,8 @@
  *
  * Props:
  *  - score      {number} — escore calculado (0–100)
- *  - label      {string} — classificação qualitativa (ex.: "Bom")
- *  - color      {string} — cor hexadecimal sem # (ex.: "1E8449")
+ *  - label      {string} — classificação qualitativa
+ *  - color      {string} — cor hexadecimal sem #
  *  - systemName {string} — nome do sistema avaliado
  */
 export default function ScoreCard({ score, label, color, systemName }) {
@@ -15,9 +15,9 @@ export default function ScoreCard({ score, label, color, systemName }) {
       role="status"
       aria-live="polite"
     >
-      {/* TODO: exibir o nome do sistema (se informado), o escore numérico e a classificação. */}
-      {/* Dica: use score.toFixed(1) para exibir uma casa decimal. */}
-      <p>Score Card — implemente este componente</p>
+      <p className="score-card__system">{systemName}</p>
+      <strong className="score-card__score">{score.toFixed(1)}</strong>
+      <span className="score-card__label">{label}</span>
     </div>
   );
 }
